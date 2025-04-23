@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Оплата премиума</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #ffe4f0;
+      text-align: center;
+      padding: 30px;
+    }
+    button {
+      padding: 15px 25px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>💎 Получить премиум</h1>
+  <p>NSFW-режим, особые сцены, эксклюзив — всё твоё 💖</p>
+  <button id="payButton">Оплатить 0₽</button>
+
+  <script>
+    const shopId = "123456";
+    const secretKey = "test_key"; // ⚠️ В проде — НИКОГДА не храним это в клиенте
+
+    document.getElementById("payButton").onclick = async () => {
+      // Тестовый триггер активации — симуляция успешной оплаты
+      Telegram.WebApp.sendData("premium_paid");
+    };
+
+    Telegram.WebApp.expand();
+  </script>
+</body>
+</html>
